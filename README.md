@@ -1,1 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You're Invited</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+    
+    body {
+      font-family: 'Cormorant Garamond', serif;
+      overflow-y: hidden;
+      overscroll-behavior: none;
+    }
+    html { scroll-behavior: smooth; }
 
+    /* Hearts and Love Symbols */
+    .heart, .love {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.8;
+      transform: scale(0.8);
+      animation-timing-function: ease-out;
+    }
+
+    .heart {
+      background: #ffb6c1;
+      width: 20px; height: 20px;
+      animation: popHeart 3s infinite ease-in-out;
+    }
+
+    .love {
+      width: 25px; height: 25px;
+      font-size: 30px;
+      color: #ff69b4;
+      animation: popHeart 4s infinite ease-in-out;
+    }
+
+    @keyframes popHeart {
+      0% { transform: scale(1) translateY(0); opacity: 1; }
+      30% { transform: scale(1.3) translateY(-50px); opacity: 1.2; }
+      50% { transform: scale(0.9) translateY(0); opacity: 1; }
+      70% { transform: scale(1.2) translateY(-30px); opacity: 1; }
+      100% { transform: scale(1) translateY(0); opacity: 0; }
+    }
+
+    /* Overlay Background */
+    #start-overlay {
+      background: linear-gradient(135deg, #ffe6f0 0%, #fff0f5 100%);
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-700 leading-relaxed antialiased">
+
+  <!-- Romantic Overlay -->
+  <div id="start-overlay" class="fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-1000 ease-in-out opacity-100">
+    <!-- Floating hearts & love symbols -->
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="heart" style="left: 10%; animation-delay: 0s;"></div>
+      <div class="heart" style="left: 40%; animation-delay: 1s;"></div>
+      <div class="heart" style="left: 70%; animation-delay: 2s;"></div>
+      <div class="love" style="left: 25%; animation-delay: 1.5s;">❤️</div>
+      <div class="love" style="left: 60%; animation-delay: 0.5s;">💖</div>
+    </div>
+
+    <div class="flex flex-col items-center p-6 sm:p-10 rounded-xl bg-white/70 backdrop-blur-sm shadow-xl max-w-sm sm:max-w-md mx-4 text-center">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extralight text-pink-700 mb-4">You're Invited</h1>
+      <p class="text-xl sm:text-2xl font-light text-pink-500 mb-6">Please tap to begin</p>
+      <button id="startButton" class="bg-pink-200 text-pink-800 font-medium py-3 px-8 rounded-full shadow-lg hover:bg-pink-300 transition-colors duration-300 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-4 focus:ring-pink-300 focus:ring-opacity-50">
+        Tap to Begin
+      </button>
+    </div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bg-music">
+    <source src="./Ed Sheeran - Perfect.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  <!-- Invitation Content -->
+  <div id="invitation-container" class="relative w-full flex flex-col items-center justify-start text-center py-20 px-6 opacity-0 transition-opacity duration-1000 ease-in-out">
+    <div class="mb-12 mt-20 sm:mt-40">
+      <p class="text-xl md:text-2xl font-normal tracking-wide animate-pulse">Together with their families</p>
+      <h1 class="text-5xl md:text-7xl font-bold italic text-pink-800 my-8 sm:my-10">Jane & John</h1>
+      <p class="text-2xl md:text-3xl font-light tracking-wider">request the pleasure of your company</p>
+    </div>
+
+    <div class="w-full h-px bg-stone-300 my-8 sm:my-12"></div>
+
+    <div class="mb-12">
+      <p class="text-xl md:text-2xl font-normal tracking-wide">at the celebration of their marriage</p>
+      <h2 class="text-3xl md:text-4xl font-semibold text-pink-700 mt-6 mb-2">Saturday, July 24, 2026</h2>
+      <p class="text-lg md:text-xl font-normal">Four o'clock in the afternoon</p>
+    </div>
+
+    <div class="w-full h-px bg-stone-300 my-8 sm:my-12"></div>
+
+    <div class="mb-12">
+      <p class="text-xl md:text-2xl font-normal tracking-wide">The ceremony and reception will be held at</p>
+      <h2 class="text-3xl md:text-4xl font-semibold text-pink-700 mt-6 mb-2">The Grand Ballroom</h2>
+      <p class="text-lg md:text-xl font-normal">123 Dreamy Lane, Somewhere, USA</p>
+    </div>
+
+    <div class="w-full h-px bg-stone-300 my-8 sm:my-12"></div>
+
+    <p class="text-lg md:text-xl font-normal tracking-wide">We can't wait to share this beautiful moment with you.</p>
+    <p class="text-lg md:text-xl font-normal tracking-wide mt-4">Formal invitation to follow.</p>
+
+    <pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </pre>
+    
+    <div class="h-96 w-full"></div> 
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const startButton = document.getElementById('startButton');
+      const startOverlay = document.getElementById('start-overlay');
+      const invitationContainer = document.getElementById('invitation-container');
+      const bgMusic = document.getElementById('bg-music');
+      let isScrolling = false;
+      let totalHeight;
+
+      const scrollSpeed = 0.5;
+
+      function calculateTotalHeight() {
+        totalHeight = invitationContainer.scrollHeight;
+      }
+
+      function autoScroll() {
+        if (!isScrolling) return;
+        const currentScroll = window.scrollY;
+        if (currentScroll + window.innerHeight >= totalHeight) {
+          isScrolling = false;
+          document.body.style.overflowY = 'auto'; // allow manual scroll
+          return;
+        }
+        window.scrollBy(0, scrollSpeed);
+        requestAnimationFrame(autoScroll);
+      }
+
+      startButton.addEventListener('click', () => {
+        window.scrollTo(0, 0);
+        calculateTotalHeight();
+
+        startOverlay.classList.add('opacity-0');
+
+        setTimeout(() => {
+          startOverlay.style.display = 'none';
+          invitationContainer.classList.remove('opacity-0');
+          invitationContainer.classList.add('opacity-100');
+
+          bgMusic.play().catch(e => console.error("Autoplay failed:", e));
+
+          document.body.style.overflowY = 'hidden'; // disable manual scroll during auto-scroll
+
+          isScrolling = true;
+          autoScroll();
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
